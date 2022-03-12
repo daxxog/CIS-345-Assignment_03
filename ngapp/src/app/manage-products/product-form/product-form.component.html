@@ -1,0 +1,14 @@
+<h2>Add Product Form</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <tr *ngFor="let param of paramsList; let i = index">
+        <td>
+            <!--- capitalize the first letter of each parameter and use it as the label --->
+            <label for="{{ param }}">{{ param[0].toUpperCase() + param.substring(1) }}</label>
+        </td>
+        <td>
+            <input name="{{ param }}" [(ngModel)]="ngModels[i]">
+        </td>
+    </tr>
+    <button>Submit</button>
+</form>
